@@ -25,6 +25,9 @@ call plug#begin(s:vim_plugged_path)
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" code tree browser
+Plug 'Tagbar'
+
 " fuzzy finder
 Plug 'ctrlpvim/ctrlp.vim'
 
@@ -49,8 +52,7 @@ function! s:is_need_install()
 endfunction
 
 if s:is_need_install()
-    echom "Found new plugin(s)
-    need to install."
+    echom "Found new plugin(s) need to install."
     :PlugInstall
 endif
 
@@ -127,6 +129,9 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-c> <C-w><C-c>
 nnoremap <C-o> <C-w><C-o>
+
+" code
+nnoremap <silent> <leader>cb :TagbarToggle<CR>
 
 " NERDTree
 " automatic open nerdtree when start up vim with a directory.
