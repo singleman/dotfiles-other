@@ -36,10 +36,10 @@ wireless _first_ {
 
 volume master {
     format = "♪: %volume"
-    format_muted = "♪: muted (%volume)"
-    device = "pulse:1"
+    # format_muted = "♪: muted (%volume)"
+    format_muted = "Volume: muted (%volume)"
+    device = "default"
 }
-
 
 battery 0 {
     format = "Battery: %percentage %remaining %status"
