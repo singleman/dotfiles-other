@@ -30,35 +30,34 @@ OH_MY_ZSH=$DOTFILES_HOME'/oh-my-zsh'
 if [ ! -d $OH_MY_ZSH ]
 then
 
-	echo -e ${yellow}"Installing Oh-My-Zsh..."
-	git clone https://github.com/robbyrussell/oh-my-zsh.git $OH_MY_ZSH
-	echo -e ${end}${light_yellow}"Done!"${end}
+    echo -e ${yellow}"Installing Oh-My-Zsh..."
+    git clone https://github.com/robbyrussell/oh-my-zsh.git $OH_MY_ZSH
+    echo -e ${end}${light_yellow}"Done!"${end}
 fi
 
 # tmux plugin manager
 TPM=$DOTFILES_HOME'/tpm'
 if [ ! -d $TPM ]
 then
-	echo -e ${yellow}"Installing Tmux Plugin Manager..."
-	git clone https://github.com/tmux-plugins/tpm $TPM
-	echo -e ${end}${light_yellow}"Done!"${end}
+    echo -e ${yellow}"Installing Tmux Plugin Manager..."
+    git clone https://github.com/tmux-plugins/tpm $TPM
+    echo -e ${end}${light_yellow}"Done!"${end}
 fi
 
 # setup symlink
 if [ -d $DOTFILES_HOME'/dotfiles' ]
 then
-	for file in $DOTFILES_HOME/dotfiles/*
-	do
+    for file in $DOTFILES_HOME/dotfiles/*
+    do
 
-		target='.'$(basename $file)
-		if [ ! -L $target -o ! -r $target ]
-		then
-			ln -fs $file $target
-			echo -e $cyan"Setup Symlinks: "$end$light_cyan$HOME'/'$target$end
-		else
-			echo -e $red"Skip File:"$end$light_red$HOME'/'$target$end"\c"
-			echo -e "\033[1m (You may need to link it manually)\033[0m"
-		fi
-	done
+        target='.'$(basename $file)
+        if [ ! -L $target -o ! -r $target ]
+        then
+            ln -fs $file $target
+            echo -e $cyan"Setup Symlinks: "$end$light_cyan$HOME'/'$target$end
+        else
+            echo -e $red"Skip File:"$end$light_red$HOME'/'$target$end"\c"
+            echo -e "\033[1m (You may need to link it manually)\033[0m"
+        fi
+    done
 fi
-
