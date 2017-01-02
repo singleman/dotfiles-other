@@ -45,19 +45,3 @@ then
 fi
 
 # setup symlink
-if [ -d $DOTFILES_HOME'/dotfiles' ]
-then
-    for file in $DOTFILES_HOME/dotfiles/*
-    do
-
-        target='.'$(basename $file)
-        if [ ! -L $target -o ! -r $target ]
-        then
-            ln -fs $file $target
-            echo -e $cyan"Setup Symlinks: "$end$light_cyan$HOME'/'$target$end
-        else
-            echo -e $red"Skip File:"$end$light_red$HOME'/'$target$end"\c"
-            echo -e "\033[1m (You may need to link it manually)\033[0m"
-        fi
-    done
-fi
