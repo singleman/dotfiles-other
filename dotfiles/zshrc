@@ -13,10 +13,11 @@ source $ZSH/oh-my-zsh.sh
 # set escape key to jk
 # bindkey -M viins 'jk' vi-cmd-mode
 
-# automatic launch tmux when startup terminal
-if [[ "$TERM" != "screen-256color" ]]
+# automatic launch tmux when startup terminal and not tty.
+if [ $TERM != "screen-256color" -a $TERM != "linux" ]
 then
   tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+  exit
 fi
 
 # ====================== ALIAS =========================

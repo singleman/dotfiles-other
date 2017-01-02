@@ -35,7 +35,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fisadev/vim-ctrlp-cmdpalette'
 
 " colorscheme
-Plug 'fisadev/fisa-vim-colorscheme'
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -71,8 +71,10 @@ set encoding=utf-8
 " support mouse
 set mouse=a
 
-" Use fisa colorscheme
-colorscheme fisa
+" Select colorscheme
+colorscheme gruvbox
+set background=dark
+
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
