@@ -2,6 +2,9 @@
 export DOTFILES_HOME=$HOME/.dotfiles
 export ZSH=$DOTFILES_HOME/oh-my-zsh
 
+# 256color
+export TERM=xterm-256color
+
 ZSH_THEME="ys"
 
 plugins=(git archlinux)
@@ -14,13 +17,13 @@ source $ZSH/oh-my-zsh.sh
 # bindkey -M viins 'jk' vi-cmd-mode
 
 # automatic launch tmux when startup terminal and not tty.
-if [ $TERM != "screen-256color" -a $TERM != "linux" ]
-then
-  tmux attach-session -t "$USER" || tmux new-session -s "$USER"
-  exit
-fi
+# if [ $TERM != "screen-256color" -a $TERM != "linux" ]
+# then
+  # tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+  # exit
+# fi
 
-# ====================== ALIAS =========================
+# ====================== ALIASES =========================
 alias reload="source $HOME/.zshrc"
 
 # git
