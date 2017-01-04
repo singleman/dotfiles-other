@@ -44,7 +44,7 @@ bindsym $mod+d exec dmenu_run
 
 # applications
 bindsym $mod+Ctrl+1 exec dropbox
-bindsym $mod+Ctrl+2 exec firefox
+bindsym $mod+Ctrl+2 exec google-chrome
 bindsym $mod+Ctrl+3 exec emacs
 
 # Pulse Audio controls
