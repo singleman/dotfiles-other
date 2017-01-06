@@ -19,8 +19,8 @@ source $ZSH/oh-my-zsh.sh
 # automatic launch tmux when startup terminal and not tty.
 # if [ $TERM != "screen-256color" -a $TERM != "linux" ]
 # then
-  # tmux attach-session -t "$USER" || tmux new-session -s "$USER"
-  # exit
+    # tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+    # exit
 # fi
 
 # ====================== ALIASES =========================
